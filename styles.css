@@ -258,6 +258,10 @@ svg {
   object-position: left bottom;
 }
 
+.hero-media picture {
+  display: contents;
+}
+
 .benefit-panel {
   position: absolute;
   right: min(-12px, calc((1100px - 100vw) / 2 + 12px));
@@ -742,10 +746,11 @@ svg {
 
   .header-inner {
     gap: 14px;
+    justify-content: center;
   }
 
   .logo-main {
-    font-size: 44px;
+    font-size: 42px;
   }
 
   .nav {
@@ -753,9 +758,7 @@ svg {
   }
 
   .header-btn {
-    min-height: 46px;
-    padding: 0 16px;
-    font-size: 15px;
+    display: none;
   }
 
   .hero {
@@ -784,28 +787,44 @@ svg {
   }
 
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+    display: block;
     max-width: 310px;
   }
 
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-actions .btn-outline {
+    display: none;
+  }
+
   .hero-media {
-    min-height: 500px;
-    margin-top: 10px;
+    min-height: auto;
+    margin-top: 28px;
+    padding-bottom: 28px;
   }
 
   .hero-media img {
-    right: -176px;
-    bottom: 0;
-    width: 620px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% + 28px);
+    max-width: none;
+    height: auto;
+    margin-left: -14px;
+    object-fit: contain;
   }
 
   .benefit-panel {
     position: relative;
     right: auto;
     bottom: auto;
-    width: min(100%, 320px);
-    margin: 275px 0 24px;
+    width: calc(100% + 28px);
+    margin: -16px 0 0 -14px;
+    gap: 16px;
+    padding: 22px;
+    border-radius: 0;
   }
 
   .form-section {
@@ -837,7 +856,22 @@ svg {
   }
 
   .service-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 0 14px 16px;
+    margin: 0 -14px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    flex: 0 0 min(86vw, 340px);
+    scroll-snap-align: start;
   }
 
   .why {
