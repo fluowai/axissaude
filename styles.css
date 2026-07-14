@@ -435,6 +435,78 @@ svg {
   padding: 32px 0 28px;
 }
 
+.faq-section {
+  padding: 62px 0 30px;
+  background: #fff;
+}
+
+.faq-heading {
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-list details {
+  border: 1px solid #cbd9e6;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.faq-list details[open] {
+  border-color: rgba(36, 196, 189, .55);
+  box-shadow: 0 16px 34px rgba(5, 35, 76, .08);
+}
+
+.faq-list summary {
+  position: relative;
+  display: block;
+  padding: 20px 58px 20px 22px;
+  color: #092f62;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--cyan-dark);
+  transform: translateY(-50%);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.faq-list p {
+  margin: 0;
+  padding: 0 22px 22px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .form-section {
   padding: 58px 0 34px;
   background: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%);
@@ -612,18 +684,23 @@ svg {
 .social a {
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(11, 22, 40, .12);
+  border-radius: 50%;
+  transition: color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.social a:hover {
+  color: var(--cyan-dark);
+  border-color: rgba(12, 154, 163, .42);
+  transform: translateY(-1px);
 }
 
 .social svg {
-  width: 23px;
-  height: 23px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
 }
 
 .footer-bottom {
@@ -829,6 +906,25 @@ svg {
 
   .form-section {
     padding-top: 44px;
+  }
+
+  .faq-section {
+    padding: 46px 0 24px;
+  }
+
+  .faq-list summary {
+    padding: 18px 52px 18px 18px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .faq-list summary::after {
+    right: 18px;
+  }
+
+  .faq-list p {
+    padding: 0 18px 18px;
+    font-size: 15px;
   }
 
   .form-copy h2 {
